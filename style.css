@@ -1,0 +1,1281 @@
+/*------- REVEAL CSS --------*/
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+/*------- REVEAL CSS --------*/
+*{
+    box-sizing: border-box;
+    padding: 20px 10px;
+    margin: 0;
+
+}
+
+
+.navbar {
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0 0 50px 10px rgb(238, 237, 237);
+    transition: all 0.6s ease-in-out;
+    z-index: 9999;
+}
+
+
+.small {
+    display:flex;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-height: 50%;
+    max-width: 100%;
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0 0 50px 10px rgb(238, 237, 237);
+}
+
+nav.small > .list-container {
+    display: block;
+    max-width: 50%;
+    text-align: center;
+    margin-top: -200px;
+    margin-right: -50px;
+}
+
+
+
+nav.small > .logo-container {
+    text-align: center;
+    margin-left: 50px;
+    max-width: 20%;
+}
+
+.logo-container {
+    text-align: center;
+    margin-left: -100px;
+
+}
+
+.nexteuk-logo {
+    max-width: 100%;
+}
+
+.list-container {
+    width: 1200px;
+    margin-left: -100px;
+    margin-right: -50px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:wght@300&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 23px;
+    letter-spacing: 0px;
+}
+
+
+
+.nav-list {
+    margin-left: -200px;
+    text-align:center;
+    list-style: none;
+    padding-top: 200px;
+
+}
+
+.nav-list .list-item {
+    display: inline-block;
+    padding: 20px 10px;
+    margin: 0px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar a:hover {
+    color: grey
+}
+
+
+
+body {
+    scroll-behavior: smooth;
+}
+
+section-1 h3 {
+    text-align: center;
+    font-size: 40px;
+}
+
+/*----------- BREXIT SLIDER ------------*/
+ 
+a {color: tomato}
+.hide {display: none;}
+/*Section ratio 16:9 */
+section {
+  width: 80vw;
+  height: 80vh;
+  margin: auto;
+  position: relative;
+  top:0;right:0;bottom:0;left:0;
+  overflow-x:hidden;
+
+}
+section > label {
+  position: relative;
+  top:0;
+  left:0;
+  width:80vw;
+  height: 100%;
+  cursor: pointer;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 1;
+  background: no-repeat center;
+  background-size: cover;
+  visibility: hidden;
+}
+section > label:nth-of-type(1) {
+  background-image: 
+url(/images/brexit_1.png)
+}
+
+section > label:nth-of-type(2) {
+  background-image:
+url(/images/brexit_2.jpg)
+}
+section > label:nth-of-type(3) {
+  background-image:
+url()
+}
+section > label:nth-of-type(4) {
+  background-image:  url(/images/brexit_3.png);
+}
+section > label:nth-of-type(5) {
+  background-image:  url(/images/covid.png);
+}
+
+
+/*mostrar imágenes por 1/2*/
+section > label:before,
+section > label:after {
+  content: '';
+
+  background:inherit; 
+  position: absolute;
+  width: 80vw;
+  height: 80vh;
+  visibility: visible;
+  -webkit-transition: .5s linear;
+  transition: .5s linear;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+
+
+section > label:before {
+  clip: rect(0px, 37vw, 80vh, 0px);
+  -webkit-animation: saleIzq 1s cubic-bezier(0.99,0.1,0.35,1.2) forwards;
+          animation: saleIzq 1s cubic-bezier(0.99,0.1,0.35,1.2) forwards;
+}
+
+
+section > label:after {
+  clip: rect(0px, 80vw, 80vh, 43vw);
+  top: -100vh;
+  /*-webkit-animation: saleDch 1s cubic-bezier(0.99,0.1,0.35,1.2) forwards;
+          animation: saleDch 1s cubic-bezier(0.99,0.1,0.35,1.2) forwards;*/
+}
+
+
+/* selector de diapositiva y transiciones entre ellas */
+nav {
+  position: absolute;
+  left: 0;
+  bottom: -7vh;
+  width: 100%;
+  text-align: center;
+}
+nav label {
+  background: rgba(0,0,0,0);
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 2px solid #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
+  position: static;
+}
+nav label:before {
+  content: attr(data-page);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: .9rem;
+  color: #aaa;
+  display: none;
+}
+
+
+
+
+#uno1:checked ~ section nav [for='uno1'],
+#dos1:checked ~ section nav [for='dos1'],
+#tres1:checked ~ section nav [for='tres1'],
+#cuatro1:checked ~ section nav [for='cuatro1'], 
+#cinque1:checked ~ section nav [for='cinque1']{
+  border: .4rem solid tomato;
+}
+
+#uno1:checked ~ section nav [for='uno1']:before,
+#dos1:checked ~ section nav [for='dos1']:before,
+#tres1:checked ~ section nav [for='tres1']:before,
+#cuatro1:checked ~ section nav [for='cuatro1']:before,
+#cinque1:checked ~ section nav [for='cinque1']:before
+ {
+  display: block;
+}
+
+#uno1:checked ~ section > [for='uno']:before,
+#dos1:checked ~ section > [for='dos']:before,
+#tres1:checked ~ section > [for='tres']:before,
+#cuatro1:checked ~ section > [for='cuatro']:before, 
+#cinque1:checked ~ section > [for='cinque']:before {
+  -webkit-animation: entraIzq 1s cubic-bezier(0.99,0.1,0.35,1.2) forwards;
+          animation: entraIzq 1s cubic-bezier(0.99,0.1,0.35,1.2) forwards;
+}
+
+#uno1:checked ~ section > [for='uno']:after,
+#dos1:checked ~ section > [for='dos']:after,
+#tres1:checked ~ section > [for='tres']:after,
+#cuatro1:checked ~ section > [for='cuatro']:after,
+#cinque1:checked ~ section > [for='cinque']:after{
+  -webkit-animation: entraDch 1s cubic-bezier(0.99,0.1,0.35,1.2) forwards;
+          animation: entraDch 1s cubic-bezier(0.99,0.1,0.35,1.2) forwards;
+}
+
+#uno1:checked ~ section > [for='uno']:after,
+#dos1:checked ~ section > [for='dos']:after,
+#tres1:checked ~ section > [for='tres']:after,
+#cuatro1:checked ~ section > [for='cuatro']:after,
+#cinque1:checked ~ section > [for='cinque']:after {
+  top: 0;
+}
+
+@-webkit-keyframes saleIzq {
+  0% {top:0; display: block;}
+  98% {top:-100vh;}
+  99% {top:-100vh; display: none;}
+  100% {top: -100vh;}
+}
+
+@keyframes saleIzq {
+  0% {top:0; display: block;}
+  98% {top:-100vh;}
+  99% {top:-100vh; display: none;}
+  100% {top: -100vh;}
+}
+@-webkit-keyframes entraIzq {
+  0% {top: 100vh;display:none;}
+  1% {top:100vh;display: block;}
+  100% {top:0;}
+}
+@keyframes entraIzq {
+  0% {top: 100vh;display:none;}
+  1% {top:100vh;display: block;}
+  100% {top:0;}
+}
+@-webkit-keyframes saleDch {
+  0% {top:0; display: block;}
+  98% {top:100vh;}
+  99% {top:100vh; display: none;}
+  100% {top: 100vh;}
+}
+@keyframes saleDch {
+  0% {top:0; display: block;}
+  98% {top:100vh;}
+  99% {top:100vh; display: none;}
+  100% {top: 100vh;}
+}
+@-webkit-keyframes entraDch {
+  0% {top: -100vh;display:none;}
+  1% {top:-100vh;display: block;}
+  100% {top:0;}
+}
+@keyframes entraDch {
+  0% {top: -100vh;display:none;}
+  1% {top:-100vh;display: block;}
+  100% {top:0;}
+}
+
+/********* pasar a full */
+#uno:checked ~ section [for='uno']:before,
+#dos:checked ~ section [for='dos']:before,
+#tres:checked ~ section [for='tres']:before,
+#cuatro:checked ~ section [for='cuatro']:before, 
+#cinque:checked ~ section [for='cinque']:before {
+  clip: rect(0px, 40vw, 80vh, 0px);
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+#uno:checked ~ section [for='uno']:after,
+#dos:checked ~ section [for='dos']:after,
+#tres:checked ~ section [for='tres']:after,
+#cuatro:checked ~ section [for='cuatro']:after,
+#cinque:checked ~ section [for='cinque']:after{
+  clip: rect(0px, 80vw, 80vh, 40vw);
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+#cierra[name='tractor']:checked ~ section:after,
+section:after {
+  content: '';
+  background: rgba(139, 139, 214, 0.4);
+  position: fixed;
+  max-height: 700px;
+    margin-top: 56px;
+    margin-left: 144px;
+    margin-right: 144px;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  z-index: 5;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+[name="tractor"]:checked ~ section:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+[for='cierra'] {
+    margin-top: 100px;
+    margin-right: 170px;
+  position: fixed;
+  right: 1rem;
+  top:0;
+  z-index: 10;
+  cursor: pointer;
+}
+#cierra:checked ~ [for='cierra']:before {
+  content:'';
+  font-size:0;
+}
+[name="tractor"]:checked ~[for='cierra']:before {
+  content: '\2297';
+  font-size: 4rem;
+  color: #fff;
+}
+[name="tractor"]:checked ~[for='cierra']:hover:before {
+  color: tomato;
+}
+
+/* La información */
+article {
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 10px;
+  max-height: 700px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  -webkit-transform: scalex(0);
+          transform: scalex(0);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+  padding: 5vh 5vh;
+}
+article h1 {
+  padding-left: 100px; 
+  font-weight: 600;
+  font-size: 10vw;
+  text-shadow: 5px 5px 0 #666;
+}
+article p {
+    align-items: center;
+  font-size: 1.5rem;
+  padding: 5vh 5vw;
+  line-height: 1.5;
+  margin-left: 50px;
+  margin-right: 170px;
+
+}
+article a {
+color: #000000;
+font-size: 20px;
+}
+
+#uno:checked ~ .uno,
+#dos:checked ~ .dos,
+#tres:checked ~ .tres,
+#cuatro:checked ~ .cuatro,
+#cinque:checked ~ .cinque {
+  -webkit-transform: scalex(1);
+          transform: scalex(1);
+  z-index: 7;
+  -webkit-transition-delay: .7s;
+          transition-delay: .7s;
+}
+
+section-1 h3{
+    font-family: "Tajawal", sans-serif;
+    font-size: 23px;
+    letter-spacing: 2px;
+}
+/*----------- END BREXIT SLIDER ------------*/
+
+
+
+section-1 {
+    display: flex;
+}
+
+section-1 h1{
+  padding-top: 100px;
+}
+
+.container-1 
+{
+    width: 90%;
+    max-width: 1000px;
+    margin-left: 100px;
+    display: flex;
+}
+
+.section-one {
+    font-family: 'Tajawal', sans-serif;
+    margin-top: 100px;
+    letter-spacing: 2px;
+    display: block; 
+    max-width: 100%;
+}
+
+.section-one p{
+    font-size: 20px;
+}
+
+section-1 h1
+{
+    font-family: 'Tajawal', sans-serif;
+    font-size: 40px;
+    letter-spacing: 3px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    text-align:left;
+    display: flex;
+}
+
+section-1 h2
+{   font-weight: normal;
+    font-size: 30px;
+    font-family: 'Tajawal', sans-serif;
+    letter-spacing: 3px;
+    margin-left: 200px;
+    margin-bottom: 25px;
+    display: flex;
+
+}
+
+section-1 {
+    display: flex;
+}
+
+*{box-sizing: border-box;}
+
+/* --------- SLIDESHOW COMMITTEE ---------- */
+carousel {
+    box-sizing: border-box;
+    background-color: rgba(12, 66, 230, 0.768);
+    position: relative;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 300px 100px;
+    grid-template-columns: 1fr 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  section-carousel#carousel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 13;
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 10;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none;
+  }
+  
+  div.item {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    background-color: coral;
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transition: all 0.25s linear;
+    transform: rotateY(calc(-10deg * var(--r)))
+      translateX(calc(-300px * var(--r)));
+    z-index: calc((var(--position) - var(--abs)));
+    background: no-repeat center;
+  background-size: cover;
+  }
+  
+  div.item:nth-of-type(1) {
+    --offset: 1;
+    background-image: url(/team/Wolff.png);
+  }
+  div.item:nth-of-type(2) {
+    --offset: 2;
+    background-image: url(/team/Bale.png);
+  }
+  div.item:nth-of-type(3) {
+    --offset: 3;
+    background-image: url(/team/Copeland.png);
+  }
+  div.item:nth-of-type(4) {
+    --offset: 4;
+    background-image: url(/team/Ladi.png);
+  }
+  div.item:nth-of-type(5) {
+    --offset: 5;
+    background-image: url(/team/van\ Kessel.png);
+  }
+  div.item:nth-of-type(6) {
+    --offset: 6;
+    background-image: url(/team/Burnay.png);
+  }
+  div.item:nth-of-type(7) {
+    --offset: 7;
+    background-image: url(/team/Mendez.png);
+  }
+  div.item:nth-of-type(8) {
+    --offset: 8;
+    background-image: url(/team/Moreno-Lax.png);
+  }
+  div.item:nth-of-type(9) {
+    --offset: 9;
+    background-image: url(/team/Murray.png);
+  }
+  div.item:nth-of-type(10) {
+    --offset: 10;
+    background-image: url(/team/Piquet.png);
+  }
+  
+  input:nth-of-type(1) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(1):checked ~ section-carousel#carousel {
+    --position: 1;
+  }
+  
+  input:nth-of-type(2) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(2):checked ~ section-carousel#carousel {
+    --position: 2;
+  }
+  
+  input:nth-of-type(3) {
+    grid-column: 4 /5;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(3):checked ~ section-carousel#carousel {
+    --position: 3;
+  }
+  
+  input:nth-of-type(4) {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(4):checked ~ section-carousel#carousel {
+    --position: 4;
+  }
+  
+  input:nth-of-type(5) {
+    grid-column: 6 / 7;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(5):checked ~ section-carousel#carousel {
+    --position: 5;
+  }
+  input:nth-of-type(6) {
+    grid-column: 7 / 8;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(6):checked ~ section-carousel#carousel {
+    --position: 6;
+  }
+
+  input:nth-of-type(7) {
+    grid-column: 8 / 9;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(7):checked ~ section-carousel#carousel {
+    --position: 7;
+  }
+
+  input:nth-of-type(8) {
+    grid-column: 9 / 10;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(8):checked ~ section-carousel#carousel {
+    --position: 8;
+  }
+
+  input:nth-of-type(9) {
+    grid-column: 10 / 11;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(9):checked ~ section-carousel#carousel {
+    --position: 9;
+  }
+
+  input:nth-of-type(10) {
+    grid-column: 11 / 12;
+    grid-row: 2 / 3;
+  }
+  input:nth-of-type(10):checked ~ section-carousel#carousel {
+    --position: 10;
+  }
+
+
+
+
+/* --------- SLIDESHOW COMMITTEE ---------- */
+
+
+/* --------- section 2 with slider ---------- */
+section-2 {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+
+
+.section-two {
+  padding-top: 70px;
+  text-align: justify;
+  max-width: 100%;
+  
+}
+
+.section-2-flex-container {
+  display: flex;
+  max-width: 100%;
+}
+.container-2 
+{
+  position: absolute;
+  margin-top: 40px;
+  background: rgb(60, 60, 60);
+    background: rgba(60, 60, 60, 0.4);
+  /*background-color: #bbb;*/
+  max-width: 80%;
+  margin-left: 0px;
+  padding-right: 200px;
+}
+
+.sec-2-item-1 h2{
+padding-top: 12px;
+text-align: center;
+
+}
+
+.sec-2-item-2 {
+margin-left: 50px;
+margin-right: 50px;
+padding-bottom: 40px;
+}
+section-2 h2 {
+  padding-top: -10px;
+margin-left: 20px;    
+align-items: center;
+}
+
+.section-two p{
+  font-size: 20px;
+}
+
+.container-3 {
+    display: flex;
+width: 1500px;
+height: 500px;
+margin-right: -100px;
+
+}
+.container3-item-1 {
+width:500px;
+height:fit-content;
+}
+.pic-ctn {
+  max-width: 50%;
+  margin-top: 30px;
+  margin-left: 150px;
+  margin-right: 0;
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+
+.pic-ctn {
+  position: absolute;
+  width: 100vw;
+  height: 300px;
+}
+
+.pic-ctn > img {
+  max-width: 80%;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 80px);
+  opacity: 0;
+  animation: display 10s infinite;
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+}
+img:nth-child(3) {
+  max-width: 60%;
+  margin-top: -100px;
+  margin-left: 50px;
+  animation-delay: 4s;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+}
+
+/* --------- section 2 with slider ---------- */
+section-1
+.flexbox-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 100px;
+    margin-right: 30px;
+}
+
+.flexbox-item-1 {
+    max-width: 100%;
+    display: flex;
+}
+
+.twitter-gif {
+    max-width: 100%;
+}
+
+.twitter-gif-2 {
+  max-width: 700px;
+}
+
+.flexbox-item-2 {
+ max-width: 100%;
+
+}
+
+.flexbox-item-2 p {
+    max-width: 100%;
+}
+
+.top-tweet-gif {
+    max-width: 100%;
+}
+
+.flexbox-container-2 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 30px;
+    margin-right: 100px;
+}
+
+section-1
+
+.flexbox-container-3 {
+    max-width: 100%;
+    align-items: center;
+gap: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.flexbox-item-1 {
+    max-width: 80%;
+    align-items: center;
+}
+.flexbox-item-1 p {
+    align-items: center;
+    text-align: justify;
+}
+
+.twitter-gif {
+    padding-bottom: 30px;
+}
+
+.flexbox-item-2 {
+    max-width: 80%;
+    align-items: center;
+}
+
+section-1 .flexbox-container-4 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+section-3 {
+display: block;
+}
+.container-10 
+{
+max-width: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.section-three {
+    margin-top: 100px;
+    padding-top: 70px;
+    text-align: justify;
+    max-width: 200%;
+    background-color: rgb(115, 109, 109);
+    box-shadow: 0 0 50px 10px rgb(159, 158, 158);
+}
+
+section-2 h2 {
+    margin-left: 100px;
+}
+
+.section-two p{
+    font-size: 20px;
+}
+
+section-4
+
+.flexbox-container-3 {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+}
+
+.item-1 {
+  position: relative;
+  max-width: 100%;
+}
+.europe-westminster {
+  max-width: 100%;
+  overflow: visible;
+}
+
+.item-2{
+  position: absolute;
+  box-sizing: border-box;
+  margin:auto;
+  background-color: rgb(188, 52, 52);
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-right: -100px;
+}
+
+.item-2 p {
+  text-align: justify;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.item-2 h3 {
+  position: relative;
+  margin-top: -30px;
+  text-align: right;
+  margin-right: 200px;
+}
+.flexbox-container-5 {
+  position: relative;
+  display: flex;
+gap: 100px;
+  flex-direction: row-reverse;
+  overflow: visible;
+}
+.item-3 {
+  position: absolute;
+  box-sizing: border-box;
+  margin-top: -10px;
+  margin-left: 100px;
+  margin-right: 500px; 
+  background-color: rgb(234, 202, 202);
+}
+
+.item-3 p {
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.item-3 h3 {
+  position: relative;
+  padding-top: 20px;
+  text-align: left;
+  margin-left: 30px;
+  margin-right: 200px;
+}
+.item-4 {
+  position:absolute;
+  margin-top: -190px;
+  margin-left:-100px;
+  margin-right: 100px;
+}
+.item-5 {
+  position: relative;
+  margin-left: 100px;
+  margin-right: 750px;
+  padding-top: 70vh;
+}
+
+.item-5 p{
+text-align: center;
+font-style: italic;
+}
+  /*------ Summer School feedback carousel -------*/
+
+  body {
+
+  }
+
+  
+  /*Carousel*/
+  .carrousel {
+    margin-top:60px;
+    background: #ffffff;
+    text-align: center;
+    height: 24em;
+    max-width: 1200px;
+    margin-left: 100px;
+    margin-right: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .carrousel h2 {
+    margin: 0;
+    margin-top: -1.7em;
+    padding: 0;
+    font-size: 1em;
+    text-align: center;
+    color: #bbbbbb;
+  }
+  .carrousel .slides {
+    width: 400%;
+    left: 0;
+    padding-left: 0;
+    padding-top: 1em;
+    overflow: hidden;
+    list-style: none;
+    position: relative;
+  
+    -webkit-transition: transform .5s;
+    -moz-transition: transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
+  }
+  .carrousel .slides li {
+    width: 25%;
+    position: relative;
+    float: left;
+  }
+  .carrousel li p{
+    padding-top: 70px;
+    font-family: source sans pro,serif; 
+    font-weight: 400;
+    font-style: italic;
+    background: #6dc1d6;
+    padding-bottom: 50px;
+    margin-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;  
+  }
+  .carrousel li q {
+    max-width: 90%;
+    margin: auto;
+    color: #000000;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  .carrousel li img {
+    margin-top: 20px;
+    width: 7em;
+    height: 7em;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+  }
+  .carrousel li span.author {
+    margin-top:0.5em;
+    font-size: 1.2em;
+    color: #777777;
+    display: block;
+  }
+  .carrousel .slidesNavigation {
+    display: block;
+    list-style: none;
+    text-align: center;
+    bottom: 1em;
+    /*--- Centering trick---*/
+      /* Absolute positioning*/
+      position: absolute; 
+      /* Abosulte positioning*/
+      width: 104px; /*This width  is the addition of the width of all the navigations dots - So in this case is   104 because the navigation dots are 26px (width:10px and 6px marginleft + 6 px marginright) and there are 4 dots so 4x26=104 */
+      left: 50%; /*Centering de element*/
+      margin-left: -52px; /*adjusting the centering by applying a negative margin of half of the width*/
+  }
+  .carrousel input {
+    display: none;
+  }
+  .carrousel .slidesNavigation label {
+    float: left;
+    margin: 6px;
+    display: block;
+    height: 10px;
+    width: 10px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: solid 2px #2980b9;
+    font-size: 0;
+  }
+  /* You have to repeat this with each slide
+  TODO: make it easier with SCSS
+  25% movement 100/slides-num
+  */
+  #radio-1:checked ~ .slides {
+    transform: translateX(0%);
+  }
+  #radio-2:checked ~ .slides {
+    transform: translateX(-25%);
+  }
+  #radio-3:checked ~ .slides {
+    transform: translateX(-50%);
+  }
+  #radio-4:checked ~ .slides {
+    transform: translateX(-75%);
+  }
+  
+  
+  .carrousel .slidesNavigation label:hover {
+     cursor: pointer;
+  }
+  /* You have to repeat this with each slide/dot */
+  .carrousel #radio-1:checked ~ .slidesNavigation label#dotForRadio-1,
+  .carrousel #radio-2:checked ~ .slidesNavigation label#dotForRadio-2,
+  .carrousel #radio-3:checked ~ .slidesNavigation label#dotForRadio-3,
+  .carrousel #radio-4:checked ~ .slidesNavigation label#dotForRadio-4 {
+    background: #2980b9;
+  }
+  
+  @media  (max-width: 796px) {
+    .carrousel{
+      height: 8.5em;
+    }
+  }
+  @media  (max-width: 480px) {
+    .carrousel li p {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+    .carrousel li q {
+        font-size: 1em;
+    }
+    .carrousel li img {
+       width:2em;
+       margin-left: -1em;
+       margin-right: 0.25em;
+    }
+  }
+
+
+
+
+
+  /*------ Summer School feedback carousel -------*/
+
+  
+/*----- SS gallery video -------*/
+section-summer-school
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    grid-gap: 10px;
+    overflow: hidden;
+    height: 130vh; 
+  }
+
+.lil-nav-container {
+  gap: 200px;
+  display: flex;
+  padding:10px;
+  padding-bottom: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+    max-width: 100%;
+    overflow-y: hidden;
+    height: 500px;
+    background-color: rgb(109, 141, 141);
+}
+
+.vimeo-container {
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.lil-nav {
+  position: relative;
+  align-items: center;
+  width: 400px;
+  background-color: rgb(63, 100, 100);
+  margin: 0 auto;
+  padding: 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 5vw); 
+  overflow-y: scroll;
+  overflow-x: scroll;
+  gap: 10px;
+}
+
+.lil-nav a {
+    display: flex;
+  }
+  
+  .lil-nav__img {
+    object-fit: cover;
+  }
+ 
+
+  .gallery-container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+
+.gallery {
+  grid-gap: 10px;
+    max-width: 50%;
+    margin: auto 0;
+    display: flex;
+
+  }
+  
+  .gallery__img {
+    object-fit: contain;
+    scroll-snap-align: start;
+    margin-bottom: 10px;
+    min-height: 100vh;
+    object-fit: cover;
+  }
+
+/*----- SS gallery video -------*/
+
+/*----- Jean Monnet pics -------*/
+.jm-legend {
+  max-width:  100%;
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+
+.jm-legend p {
+  font-style: italic;
+  font-size: 20px;
+}
+
+.jean-monnet-house {
+  margin-left: 100px;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.jm-img {
+  object-fit: contain;
+  max-width: 80%;
+}
+
+/*----- Jean Monnet pics -------*/
