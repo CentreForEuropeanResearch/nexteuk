@@ -1262,6 +1262,12 @@ img {
   margin-bottom: 10px;
 }
 
+.jm-legend a {
+  max-width:  100%;
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+
 .jm-legend p {
   font-style: italic;
   font-size: 20px;
