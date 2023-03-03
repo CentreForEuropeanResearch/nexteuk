@@ -1274,9 +1274,8 @@ img {
 }
 
 .jm-img {
-  display: flex;
   object-fit: contain;
-  max-width: 50%;
+  max-width: 80%;
 }
 
 /*----- Jean Monnet pics -------*/
