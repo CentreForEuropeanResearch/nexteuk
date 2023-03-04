@@ -560,43 +560,43 @@ carousel {
   
   div.item:nth-of-type(1) {
     --offset: 1;
-    background-image: url('../team/Wolff.png');
+    background-image: url("team/Wolff.png");
   }
   div.item:nth-of-type(2) {
     --offset: 2;
-    background-image: url(/team/Bale.png);
+    background-image: url("team/Bale.png");
   }
   div.item:nth-of-type(3) {
     --offset: 3;
-    background-image: url(/team/Copeland.png);
+    background-image: url("team/Copeland.png");
   }
   div.item:nth-of-type(4) {
     --offset: 4;
-    background-image: url(/team/Ladi.png);
+    background-image: url("team/Ladi.png");
   }
   div.item:nth-of-type(5) {
     --offset: 5;
-    background-image: url(/team/van\ Kessel.png);
+    background-image: url("team/van\ Kessel.png");
   }
   div.item:nth-of-type(6) {
     --offset: 6;
-    background-image: url(/team/Burnay.png);
+    background-image: url("team/Burnay.png");
   }
   div.item:nth-of-type(7) {
     --offset: 7;
-    background-image: url(/team/Mendez.png);
+    background-image: url("team/Mendez.png");
   }
   div.item:nth-of-type(8) {
     --offset: 8;
-    background-image: url(/team/Moreno-Lax.png);
+    background-image: url("team/Moreno-Lax.png");
   }
   div.item:nth-of-type(9) {
     --offset: 9;
-    background-image: url(/team/Murray.png);
+    background-image: url("team/Murray.png");
   }
   div.item:nth-of-type(10) {
     --offset: 10;
-    background-image: url(/team/Piquet.png);
+    background-image: url("team/Piquet.png");
   }
   
   input:nth-of-type(1) {
